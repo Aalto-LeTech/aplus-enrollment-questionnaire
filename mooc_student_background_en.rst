@@ -1,0 +1,14 @@
+.. pick-one::
+  :required:
+  :key: enroll-mooc-background
+
+  What is the highest degree that you have completed?
+  
+  noneofthese. I have not completed any of these degrees
+  primary. Primary or lower secondary school
+  uppersec. Matriculation examination (upper secondary school, high school) or a vocational examination
+  vanhaopisto. Opistotutkinto (lowest degree of higher education in Finland before the reformation of the educational system)
+  polytech. (Bachelor's) degree from a university of applied sciences or polytechnic
+  bsc. Bachelor's degree from a university
+  msc. Master's degree from a university
+  phd. Doctor's or Licentiate's degree from a university
