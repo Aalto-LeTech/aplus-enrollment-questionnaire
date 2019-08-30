@@ -19,7 +19,7 @@ How to use this in your course
    # The JavaScript code used by the enrollment questionnaire is hosted in the course repo,
    # so we need to know the course key in order to craft the URL of the JS.
    # This RST substitution is used to insert the script in the questionnaire RST code.
-   course_key = 'default' # FIXME: use the correct key automatically
+   course_key = os.environ.get('COURSE_KEY', 'default')
    rst_prolog = '''.. |enroll-js-script| raw:: html
 
      <script src="/static/{course_key}/_static/enrollmentquiz.js"></script>
@@ -29,6 +29,13 @@ How to use this in your course
    # initially been defined with some elements.
    exclude_patterns = ['_build', '_data', 'enrollment']
    ```
+   
+   The environment variable `COURSE_KEY` should be defined in `build.sh` for the
+   production mooc-grader and in `docker-compile.sh` for local testing.
+   In `build.sh`, you need to know the course key used in the production installation
+   and export the variable like this: `export COURSE_KEY='mycoursekey'`.
+   In `docker-compile.sh`, add the parameter `-e "COURSE_KEY=default"` to the
+   `docker run` command (the course key is `default` in the local testing container).
    
    If the `exclude_patterns` variable is not defined correctly, compiling the
    course RST fails with an error (because the question templates should not
@@ -49,6 +56,10 @@ How to use this in your course
    git submodule add https://github.com/Aalto-Letech/aplus-enrollment-questionnaire.git enrollment
    ```
 
+   If the git submodule has been added to your course git repository and you
+   do not have it yet in your local repository in your computer, you need to run
+   the command `git pull && git submodule update --init`.
+
 4. You need to add the enrollment questionnaire to the course contents as follows.
    
    1. Modify the `index.rst` file of the first exercise round (module).
@@ -57,7 +68,8 @@ How to use this in your course
    of the course. The module index.rst defines the chapters of the module with
    the `toctree` directive. **Add** either the chapter `enrollment_en` or `enrollment_fi`
    (English or Finnish version) to the **end** of the first module in
-   the module index.rst.
+   the module index.rst. **Note**: the opening and closing times of the module
+   affect the enrollment questionnaire too.
    2. **Copy** the corresponding file (`enrollment_en.rst` or `enrollment_fi.rst`)
    from the `enrollment` directory into the module directory.
    3. You may modify the questionnaire in that file if necessary.

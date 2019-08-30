@@ -1,6 +1,6 @@
 .. pick-one::
   :required:
-  :key: enroll-mooc-background
+  :key: enroll-prev-degree
 
   What is the highest degree that you have completed?
   

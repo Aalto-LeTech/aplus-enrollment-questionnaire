@@ -18,6 +18,10 @@ Ilmoittaudu kurssille täyttämällä tämä kysely.
   :submissions: 2
 
   Ilmoittaudu kurssille täyttämällä tämä kysely.
+  Osa kysymyksistä voidaan piilottaa aiemman kysymyksen vastauksen perusteella,
+  joten kysymysten numerointi ei välttämättä etene järjestyksessä.
+
+  .. include:: /enrollment/prev_degree_fi.rst
 
   .. include:: /enrollment/student_fi.rst
 
@@ -43,8 +47,10 @@ poistaa kurssilta, jos kurssia tarjotaan vain sisäisille opiskelijoille.
   :submissions: 2
 
   Ilmoittaudu kurssille täyttämällä tämä kysely.
+  Osa kysymyksistä voidaan piilottaa aiemman kysymyksen vastauksen perusteella,
+  joten kysymysten numerointi ei välttämättä etene järjestyksessä.
 
-  .. include:: /enrollment/mooc_student_background_fi.rst
+  .. include:: /enrollment/prev_degree_fi.rst
 
   .. include:: /enrollment/honour_code_fi.rst
 

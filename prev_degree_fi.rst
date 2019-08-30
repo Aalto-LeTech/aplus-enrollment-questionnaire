@@ -1,6 +1,6 @@
 .. pick-one::
   :required:
-  :key: enroll-mooc-background
+  :key: enroll-prev-degree
 
   Mikä on korkein tutkinto, jonka olet suorittanut?
   

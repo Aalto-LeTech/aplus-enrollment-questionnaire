@@ -17,6 +17,10 @@ Enroll to the course by filling in this questionnaire.
   :submissions: 2
 
   Enroll to the course by filling in this questionnaire.
+  Some questions may become hidden based on answers on previous questions, thus
+  the numbering of the questions may have gaps.
+
+  .. include:: /enrollment/prev_degree_en.rst
 
   .. include:: /enrollment/student_en.rst
 
@@ -42,8 +46,10 @@ from the course if the course is only offered to internal students.
   :submissions: 2
 
   Enroll to the course by filling in this questionnaire.
+  Some questions may become hidden based on answers on previous questions, thus
+  the numbering of the questions may have gaps.
 
-  .. include:: /enrollment/mooc_student_background_en.rst
+  .. include:: /enrollment/prev_degree_en.rst
 
   .. include:: /enrollment/honour_code_en.rst
 
