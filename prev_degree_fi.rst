@@ -7,7 +7,7 @@
   noneofthese. En ole suorittanut mitään alla olevista tutkinnoista
   primary. Peruskoulu
   uppersec. Ylioppilas- tai ammattitutkinto
-  vanhaopisto. Opistotutkinto
+  vanhaopisto. Opistotutkinto (koulutusjärjestelmästä poistettu opistoasteen tutkinto)
   polytech. Ammattikorkeakoulututkinto
   bsc. Yliopiston kandidaatin tutkinto
   msc. Maisterin tutkinto
