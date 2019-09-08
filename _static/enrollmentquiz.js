@@ -52,13 +52,25 @@ jQuery(function() {
             const nameVals = new Map(Object.entries(sbmsData));
             for (let [inputName, values] of nameVals) {
                 // Set values to the form inputs if nothing has been checked in the input group.
-                const inputElem = this.element.find('input[name="' + inputName + '"]');
+                const inputElem = this.element.find('[name="' + inputName + '"]');
                 if (!inputElem.length)
                     continue;
-                const inputType = inputElem.attr('type');
+                let inputType;
+                if (inputElem.is('input')) {
+                    inputType = inputElem.attr('type');
+                } else if (inputElem.is('textarea')) {
+                    inputType = 'textarea';
+                } else if (inputElem.is('select')) {
+                    inputType = 'select';
+                }
                 if ((inputType === 'radio' || inputType === 'checkbox')
                         && !inputElem.is(':checked')) {
                     // Do not override any existing values.
+                    inputElem.val(values);
+                } else if ((inputType === 'text' || inputType === 'textarea')
+                        && !inputElem.val()) {
+                    inputElem.val(values[0]);
+                } else if (inputType === 'select') {
                     inputElem.val(values);
                 }
             }
@@ -97,15 +109,34 @@ jQuery(function() {
             // There are usually many inputs with the same name attribute.
             // The whole question is wrapped in a div.form-group element.
             const inputs = this.element.find('input[name="' + questionName + '"]');
+            const inputType = inputs.attr('type');
             inputs.first().closest('div.form-group').toggle(show);
             if (show) {
                 // Set the previous values to the inputs that are shown again.
-                inputs.filter('[data-prev-checked="yes"]').prop('checked', true);
-                inputs.removeAttr('data-prev-checked');
+                if (inputType === 'text') {
+                    if (inputs.data('prev-value')) {
+                        inputs.val(inputs.data('prev-value'));
+                    }
+                    inputs.removeData('prev-value');
+                } else {
+                    // works for radio buttons and checkboxes
+                    inputs.filter('[data-prev-checked="yes"]').prop('checked', true);
+                    inputs.removeAttr('data-prev-checked');
+                }
             } else {
                 // Remove selected values from the hidden inputs.
-                inputs.filter(':checked').attr('data-prev-checked', 'yes');
-                inputs.prop('checked', false);
+                if (inputType === 'text') {
+                    if (inputs.val()) {
+                        // Do not lose the data in case the same input is hidden
+                        // twice in a row.
+                        inputs.data('prev-value', inputs.val());
+                    }
+                    inputs.val('');
+                } else {
+                    // works for radio buttons and checkboxes
+                    inputs.filter(':checked').attr('data-prev-checked', 'yes');
+                    inputs.prop('checked', false);
+                }
             }
         },
 
