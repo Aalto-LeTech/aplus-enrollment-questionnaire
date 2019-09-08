@@ -27,9 +27,13 @@ Ilmoittaudu kurssille täyttämällä tämä kysely.
 
   .. include:: /enrollment/bachelor_fi.rst
 
+  .. include:: /enrollment/other_programme_bsc_fi.rst
+
   .. include:: /enrollment/bsc_year_fi.rst
 
   .. include:: /enrollment/master_fi.rst
+
+  .. include:: /enrollment/other_programme_msc_fi.rst
 
   .. include:: /enrollment/master_year_fi.rst
 

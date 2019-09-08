@@ -14,10 +14,11 @@ jQuery(function() {
             'enroll-student': { // Question key (the name attribute of the input elements)
                 // Show these questions when the option is selected; the other questions
                 // that depend on this question are hidden.
-                bsc: ['enroll-bsc', 'enroll-bsc-year'],
-                msc: ['enroll-master', 'enroll-master-year'],
+                bsc: ['enroll-bsc', 'enroll-bsc-year', 'enroll-bsc-other'],
+                msc: ['enroll-master', 'enroll-master-year', 'enroll-msc-other'],
                 // All questions controlled by this question.
-                ALL: ['enroll-bsc', 'enroll-bsc-year', 'enroll-master', 'enroll-master-year'],
+                ALL: ['enroll-bsc', 'enroll-bsc-year', 'enroll-bsc-other',
+                      'enroll-master', 'enroll-master-year', 'enroll-msc-other'],
             },
         },
     };
