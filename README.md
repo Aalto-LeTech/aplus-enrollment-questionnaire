@@ -76,7 +76,13 @@ How to use this in your course
       If the course is not offered to external students (who use Google login),
       then you may remove the questionnaire `enrollexternalexercise` from the RST file.
 
-5. Copy the file `enrollment/_static/enrollmentquiz.js` into the path
-   `_static/enrollmentquiz.js` so that the JS file is included in the static files
-   of the course.
+5. Create a symbolic link pointing to the file `enrollment/_static/enrollmentquiz.js`
+   in the path `_static/enrollmentquiz.js` so that the JS file is included
+   in the static files of the course. (If there are issues with symbolic links,
+   just copy the file.)
+
+   ```bash
+   cd _static
+   ln -s ../enrollment/_static/enrollmentquiz.js enrollmentquiz.js
+   ```
 
