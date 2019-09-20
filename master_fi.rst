@@ -28,7 +28,9 @@
   ccismldsai. Master's Programme in Computer, Communication and Information Sciences – Machine Learning, Data Science and Artificial Intelligence
   ccisseccloud. Master's Programme in Computer, Communication and Information Sciences – Security and Cloud Computing
   ccisswse. Master's Programme in Computer, Communication and Information Sciences – Software and Service Engineering
+  techcsust. Master's Programme in Creative Sustainability - Master of Science (tech.)
   elecnano. Master's Programme in Electronics and Nanotechnology
+  enerstoreit. Master's Programme in Energy Storage (EIT InnoEnergy)
   engphys. Master's Programme in Engineering Physics
   eitinnoenergy. Master's Programme in Environomical Pathways for Sustainable Energy Systems (SELECT) (EIT InnoEnergy)
   emmep. Master's Programme in European Mining, Minerals and Environmental Program (EMMEP)
@@ -40,7 +42,6 @@
   eithcidesign. Master's Programme in ICT Innovation (EIT Digital Master School) – Human-Computer Interaction and Design
   eitviscomp. Master's Programme in ICT Innovation (EIT Digital Master School) – Visual Computing and Communication
   tuta. Master's Programme in Industrial Engineering and Management
-  infoservman. Master's Programme in Information and Service Management
   infonetw. Master's Programme in Information Networks
   mscintdesbusman. Master's Programme in International Design Business Management - MSc in Technology (CHEM, ELEC, ENG, SCI)
   lifetech. Master's Programme in Life Science Technologies
@@ -49,6 +50,7 @@
   realestateecon. Master's Programme in Real Estate Economics
   secclo. Master's Programme in Security and Cloud Computing (SECCLO) (Erasmus Mundus)
   spatplan. Master's Programme in Spatial Planning and Transportation Engineering
+  urbanmobil. Master's Programme in Urban Mobility (EIT Urban Mobility)
   urbanestate. Master's Programme in Urban Studies and Planning in Real Estate Economics
   urbanarch. Master's Programme in Urban Studies and Planning, MSc in Architecture
   urbanlandscape. Master's Programme in Urban Studies and Planning, MSc in Landscape Architecture
@@ -65,6 +67,7 @@
   bizepinnoman. Master's Programme in Entrepreneurship and Innovation Management
   bizfinance. Master's Programme in Finance
   bizglobman. Master's Programme in Global Management (including CEMS MIM)
+  infoservman. Master's Programme in Information and Service Management
   bizintdesman. Master's Programme in International Design Business Management - MSc in Economics and Business Administration
   bizmarketing. Master's Programme in Marketing
   bizyritjur. Yritysjuridiikan maisteriohjelma
