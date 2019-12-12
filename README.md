@@ -34,9 +34,12 @@ How to use this in your course
    production mooc-grader and in `docker-compile.sh` for local testing.
    In `build.sh`, you need to know the course key used in the production installation
    and export the variable like this: `export COURSE_KEY='mycoursekey'`.
+   You can see the course key in A+ by looking at the import URL in the Edit course
+   page: in the URL `https://grader.cs.hut.fi/samplecourse/aplus-json`,
+   the course key is `samplecourse`.
    In `docker-compile.sh`, add the parameter `-e "COURSE_KEY=default"` to the
    `docker run` command (the course key is `default` in the local testing container).
-   
+
    If the `exclude_patterns` variable is not defined correctly, compiling the
    course RST fails with an error (because the question templates should not
    be compiled independently; they are included into another RST file):

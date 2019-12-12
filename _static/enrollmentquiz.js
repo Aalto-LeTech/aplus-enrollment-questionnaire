@@ -83,9 +83,12 @@ jQuery(function() {
             const self = this;
             Object.keys(triggers).forEach(function(questionKey) {
                 const questionsToShowByOption = triggers[questionKey];
-                const questionInput = self.element.find('input[name="' + questionKey + '"]');
+                const questionInput = self.element.find('[name="' + questionKey + '"]');
                 questionInput.change(function() {
-                    if (this.checked) {
+                    // This does not support text inputs. In other words, question
+                    // visibility can not be controlled by a text input
+                    // (in this current implementation).
+                    if (this.checked || (this.type === 'select-one' && this.value)) {
                         const qToShow = questionsToShowByOption[this.value];
                         const qToHide = qToShow
                             ? questionsToShowByOption.ALL.filter(k => !qToShow.includes(k))
@@ -108,12 +111,20 @@ jQuery(function() {
         toggleQuestionVisibility: function(questionName, show) {
             // There are usually many inputs with the same name attribute.
             // The whole question is wrapped in a div.form-group element.
-            const inputs = this.element.find('input[name="' + questionName + '"]');
-            const inputType = inputs.attr('type');
+            const inputs = this.element.find('[name="' + questionName + '"]');
+            let inputType;
+            if (inputs.is('input')) {
+                inputType = inputs.attr('type');
+            } else if (inputs.is('textarea')) {
+                inputType = 'textarea';
+            } else if (inputs.is('select')) {
+                inputType = 'select';
+            }
+
             inputs.first().closest('div.form-group').toggle(show);
             if (show) {
                 // Set the previous values to the inputs that are shown again.
-                if (inputType === 'text') {
+                if (inputType === 'text' || inputType === 'textarea' || inputType === 'select') {
                     if (inputs.data('prev-value')) {
                         inputs.val(inputs.data('prev-value'));
                     }
@@ -125,13 +136,17 @@ jQuery(function() {
                 }
             } else {
                 // Remove selected values from the hidden inputs.
-                if (inputType === 'text') {
+                if (inputType === 'text' || inputType === 'textarea') {
                     if (inputs.val()) {
                         // Do not lose the data in case the same input is hidden
                         // twice in a row.
                         inputs.data('prev-value', inputs.val());
                     }
                     inputs.val('');
+                } else if (inputType === 'select') {
+                    // A select element always has some option selected, so
+                    // we can not clear the selection.
+                    inputs.data('prev-value', inputs.val());
                 } else {
                     // works for radio buttons and checkboxes
                     inputs.filter(':checked').attr('data-prev-checked', 'yes');
