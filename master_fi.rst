@@ -1,9 +1,11 @@
 .. pick-one::
   :key: enroll-master
+  :dropdown:
 
   Jos olet Aalto-yliopiston maisteriohjelman opiskelija (olet siis jo suorittanut
   kandidaatin tutkinnon), niin minkä maisteriohjelman opiskelija olet?
-  
+
+  +-. -----
   ark. Arkkitehtuurin maisteriohjelma
   mark. Maisema-arkkitehtuurin maisteriohjelma
   enerproc. Master's Programme in Advanced Energy Solutions - Industrial Energy Processes and Sustainability

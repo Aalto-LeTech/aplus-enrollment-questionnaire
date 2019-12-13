@@ -1,8 +1,10 @@
 .. pick-one::
   :key: enroll-bsc
+  :dropdown:
 
   Jos olet Aalto-yliopiston kandidaattiohjelman opiskelija, niin mihin hakukohteeseen sinut on valittu?
-  
+
+  +-. -----
   ark. Arkkitehtuuri, tekniikan kandidaatti ja arkkitehti
   as. Automaatio- ja informaatioteknologia, tekniikan kandidaatti ja diplomi-insinööri
   bio. Bioinformaatioteknologia, tekniikan kandidaatti ja diplomi-insinööri

@@ -1,9 +1,11 @@
 .. pick-one::
   :key: enroll-master
+  :dropdown:
 
   If you are the degree student in one of the Master's programmes of Aalto University
   (i.e., you already have a Bachelor's degree), in which Master's programme do you study?
-  
+
+  +-. -----
   ark. Arkkitehtuurin maisteriohjelma
   mark. Maisema-arkkitehtuurin maisteriohjelma
   enerproc. Master's Programme in Advanced Energy Solutions - Industrial Energy Processes and Sustainability

@@ -1,9 +1,11 @@
 .. pick-one::
   :key: enroll-bsc
+  :dropdown:
 
   If you are the degree student in one of the Bachelor's programmes of Aalto University,
   through which study option did you enter the university?
-  
+
+  +-. -----
   ark. Arkkitehtuuri, tekniikan kandidaatti ja arkkitehti
   as. Automaatio- ja informaatioteknologia, tekniikan kandidaatti ja diplomi-insinööri
   bio. Bioinformaatioteknologia, tekniikan kandidaatti ja diplomi-insinööri

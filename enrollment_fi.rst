@@ -16,6 +16,7 @@ Ilmoittaudu kurssille täyttämällä tämä kysely.
   :title: Ilmoittautuminen
   :status: enrollment
   :submissions: 2
+  :category: enrollment
 
   Ilmoittaudu kurssille täyttämällä tämä kysely.
   Osa kysymyksistä voidaan piilottaa aiemman kysymyksen vastauksen perusteella,
@@ -49,6 +50,7 @@ poistaa kurssilta, jos kurssia tarjotaan vain sisäisille opiskelijoille.
   :title: Ilmoittautuminen
   :status: enrollment_ext
   :submissions: 2
+  :category: enrollment
 
   Ilmoittaudu kurssille täyttämällä tämä kysely.
   Osa kysymyksistä voidaan piilottaa aiemman kysymyksen vastauksen perusteella,
