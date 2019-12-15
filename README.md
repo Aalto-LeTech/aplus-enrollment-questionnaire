@@ -52,8 +52,9 @@ How to use this in your course
 
 3. Add this aplus-enrollment-questionnaire repository as a git submodule to
    the root of the course repository. The name of the directory inside the
-   course repository shall be `enrollment`. The submodule contains commonly
-   used questions and files.
+   course repository shall be `enrollment`. You should not change the name
+   `enrollment` since it has been hardcoded into `enrollment_en.rst` and
+   `enrollment_fi.rst`. The submodule contains commonly used questions and files.
 
    ```
    git submodule add https://github.com/Aalto-Letech/aplus-enrollment-questionnaire.git enrollment
@@ -65,10 +66,14 @@ How to use this in your course
 
 4. You need to add the enrollment questionnaire to the course contents as follows.
    
-   1. Modify the `index.rst` file of the first exercise round (module).
-   (Or a different module if you know what you are doing.)
-   The file may have a different name since it is defined in the main `index.rst`
-   of the course. The module index.rst defines the chapters of the module with
+   1. Modify the `index.rst` file of some exercise round (module).
+   The first module is usually suitable for this purpose. The opening and closing
+   times of the module affect the enrollment exercise too in addition to the
+   enrollment opening and closing times of the course, thus the module time limits
+   should be at least as wide as the course enrollment time limits.
+   The module `index.rst` may actually have a different filename than `index.rst`
+   since it is defined in the main `index.rst` of the course.
+   The module index.rst defines the chapters of the module with
    the `toctree` directive. **Add** either the chapter `enrollment_en` or `enrollment_fi`
    (English or Finnish version) to the **end** of the first module in
    the module index.rst. **Note**: the opening and closing times of the module
