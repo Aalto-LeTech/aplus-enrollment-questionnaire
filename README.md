@@ -35,7 +35,7 @@ How to use this in your course
    In `build.sh`, you need to know the course key used in the production installation
    and export the variable like this: `export COURSE_KEY='mycoursekey'`.
    You can see the course key in A+ by looking at the import URL in the Edit course
-   page: in the URL `https://grader.cs.hut.fi/samplecourse/aplus-json`,
+   page: in the URL `https://grader.cs.aalto.fi/samplecourse/aplus-json`,
    the course key is `samplecourse`.
    In `docker-compile.sh`, add the parameter `-e "COURSE_KEY=default"` to the
    `docker run` command (the course key is `default` in the local testing container).
@@ -57,7 +57,7 @@ How to use this in your course
    `enrollment_fi.rst`. The submodule contains commonly used questions and files.
 
    ```
-   git submodule add https://github.com/Aalto-Letech/aplus-enrollment-questionnaire.git enrollment
+   git submodule add https://github.com/apluslms/aplus-enrollment-questionnaire.git enrollment
    ```
 
    If the git submodule has been added to your course git repository and you
@@ -67,22 +67,31 @@ How to use this in your course
 4. You need to add the enrollment questionnaire to the course contents as follows.
    
    1. Modify the `index.rst` file of some exercise round (module).
-   The first module is usually suitable for this purpose. The opening and closing
-   times of the module affect the enrollment exercise too in addition to the
-   enrollment opening and closing times of the course, thus the module time limits
-   should be at least as wide as the course enrollment time limits.
-   The module `index.rst` may actually have a different filename than `index.rst`
-   since it is defined in the main `index.rst` of the course.
-   The module index.rst defines the chapters of the module with
-   the `toctree` directive. **Add** either the chapter `enrollment_en` or `enrollment_fi`
-   (English or Finnish version) to the **end** of the first module in
-   the module index.rst. **Note**: the opening and closing times of the module
-   affect the enrollment questionnaire too.
+
+      The first module is usually suitable for this purpose. The opening time
+      of the module affects the enrollment exercise too in addition to the
+      enrollment opening and closing times of the course, thus the module opening time
+      should not be later than the course enrollment opening time.
+
+      The module `index.rst` may actually have a different filename than `index.rst`
+      since it is defined in the main `index.rst` of the course.
+
+      The module index.rst defines the chapters of the module with
+      the `toctree` directive. **Add** either the chapter `enrollment_en` or `enrollment_fi`
+      (English or Finnish version) to the **end** of the first module in
+      the module index.rst. **Note**: the opening time of the module
+      affects the enrollment questionnaire too.
+
+      If the course is open to external students, then add the chapter
+      `enrollment_external_en` or `enrollment_external_fi` to the end of
+      the module index.rst.
+
    2. **Copy** the corresponding file (`enrollment_en.rst` or `enrollment_fi.rst`)
-   from the `enrollment` directory into the module directory.
+      from the `enrollment` directory into the module directory. Similarly,
+      `enrollment_external_en` or `enrollment_external_fi` if external students
+      may enroll in the course.
+
    3. You may modify the questionnaire in that file if necessary.
-      If the course is not offered to external students (who use Google login),
-      then you may remove the questionnaire `enrollexternalexercise` from the RST file.
 
 5. Create a symbolic link pointing to the file `enrollment/_static/enrollmentquiz.js`
    in the path `_static/enrollmentquiz.js` so that the JS file is included
